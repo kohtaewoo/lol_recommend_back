@@ -5,10 +5,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = {
-        "http://35.174.189.107",
-        "http://35.174.189.107:3000"
-})
+@CrossOrigin(origins = "https://recommendchamp.vercel.app")
 @RestController
 @RequestMapping("/api/riot")
 public class RiotController {
