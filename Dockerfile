@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY build/libs/*.jar app.jar
 
-ENV BACKEND_SECRET_KEY=${BACKEND_SECRET_KEY}
-ENV PYTHON_SERVER_URL=${PYTHON_SERVER_URL}
+EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar app.jar"]
