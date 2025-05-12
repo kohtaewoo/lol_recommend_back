@@ -2,14 +2,15 @@ FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app
 
-# Gradle wrapper 포함된 프로젝트 기준
 COPY . .
 
+# ✅ gradlew 실행권한 부여 (필수!)
+RUN chmod +x ./gradlew
+
+# ✅ 빌드 수행
 RUN ./gradlew clean build -x test
 
 WORKDIR /app/build/libs
-
-# 최신 jar 하나를 app.jar로 복사
 RUN cp *.jar /app/app.jar
 
 WORKDIR /app
